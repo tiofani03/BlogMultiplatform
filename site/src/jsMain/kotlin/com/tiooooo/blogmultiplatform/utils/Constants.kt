@@ -9,3 +9,8 @@ object Res{
         const val logo = "/logo.svg"
     }
 }
+
+object Id {
+    const val userNameInputId = "userNameInputId"
+    const val passwordInputId = "passwordInputId"
+}
