@@ -2,7 +2,8 @@ package com.tiooooo.blogmultiplatform.pages.admin
 
 import androidx.compose.runtime.Composable
 import com.tiooooo.blogmultiplatform.components.SidePanel
-import com.tiooooo.blogmultiplatform.utils.Constants.PAGE_WIDTH
+import com.tiooooo.blogmultiplatform.navigation.Screen
+import com.tiooooo.blogmultiplatform.utils.Constants
 import com.tiooooo.blogmultiplatform.utils.IsUserLoggedIn
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -13,16 +14,16 @@ import com.varabyte.kobweb.compose.ui.modifiers.maxWidth
 import com.varabyte.kobweb.core.Page
 import org.jetbrains.compose.web.css.px
 
-@Page
+@Page()
 @Composable
-fun HomePage() {
+fun CreatePage() {
     IsUserLoggedIn {
-        HomeScreen()
+        CreateScreen()
     }
 }
 
 @Composable
-fun HomeScreen() {
+fun CreateScreen() {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -30,7 +31,7 @@ fun HomeScreen() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .maxWidth(PAGE_WIDTH.px)
+                .maxWidth(Constants.PAGE_WIDTH.px)
         ) {
             SidePanel()
         }

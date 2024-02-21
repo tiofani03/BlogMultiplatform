@@ -10,6 +10,7 @@ import androidx.compose.runtime.setValue
 import com.tiooooo.blogmultiplatform.models.Theme
 import com.tiooooo.blogmultiplatform.models.User
 import com.tiooooo.blogmultiplatform.models.UserWithoutPassword
+import com.tiooooo.blogmultiplatform.navigation.Screen
 import com.tiooooo.blogmultiplatform.styles.loginInputStyle
 import com.tiooooo.blogmultiplatform.utils.Constants
 import com.tiooooo.blogmultiplatform.utils.Id
@@ -70,7 +71,7 @@ fun LoginScreen() {
     LaunchedEffect(true){
         val isLoggedIn = localStorage["remember"].toBoolean()
         if (isLoggedIn){
-            context.router.navigateTo("admin")
+            context.router.navigateTo(Screen.AdminHome.route)
         }
     }
 
@@ -162,7 +163,7 @@ fun LoginScreen() {
                                 )
                                 if (user != null) {
                                     rememberLoggedIn(true, user)
-                                    context.router.navigateTo("admin")
+                                    context.router.navigateTo(Screen.AdminHome.route)
                                 } else {
                                     errorText = "Input fields are empty"
                                     delay(3000)
